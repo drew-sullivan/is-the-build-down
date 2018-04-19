@@ -7,6 +7,9 @@
 }
 
 .status-box {
-  height: 500px;
-  width: 500px;
+  height: 300px;
+}
+
+button {
+  margin-top: 15px;
 }

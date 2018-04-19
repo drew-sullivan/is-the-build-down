@@ -1,20 +1,28 @@
-<button routerLink="/status">Status</button>
+<mat-card>
+  <div class="status-box" [class.up]="adminService.isUp" [class.down]="!adminService.isUp"></div>
 
-<div class="status-box" [class.up]="adminService.isUp" [class.down]="!adminService.isUp"></div>
-
-<button *ngIf="!adminService.isUp" (click)="adminService.isUp = true">Build is no longer down</button>
-<button *ngIf="adminService.isUp" (click)="adminService.isUp = false">Build is down</button>
-
-<div class="status"></div>
-
-<div *ngIf="!adminService.isUp">
-  <label>Who's looking at the issue?</label>
-  <form>
-    <input type="text" #nameInput>
-    <button (click)="add(nameInput.value); nameInput.value = ''">Submit</button>
-  </form>
-
-  <ul>
-    <li *ngFor="let name of adminService.fixers">{{ name }}</li>
-  </ul>
-</div>
+  <div class="change-status-buttons">
+    <button mat-raised-button *ngIf="!adminService.isUp" (click)="adminService.isUp = true">Build is no longer down</button>
+    <button mat-raised-button *ngIf="adminService.isUp" (click)="adminService.isUp = false">Build is down</button>
+  </div>
+  
+  <div class="status"></div>
+  
+  <div *ngIf="!adminService.isUp" class="fixer-box">
+    <label>Who's looking at the issue?</label>
+    <form>
+      <mat-form-field class="example-form-field">
+        <input matInput type="text" placeholder="Name" #nameInput/>
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+        </mat-form-field>
+      <button mat-raised-button (click)="add(nameInput.value); nameInput.value = ''">Submit</button>
+    </form>
+  
+    <mat-list role="list" *ngIf="!adminService.isUp">
+      <h3 mat-subheader>Looking into the issue:</h3>
+      <mat-list-item role="listitem" *ngFor="let name of adminService.fixers">{{ name }}</mat-list-item>
+    </mat-list>
+  </div>
+</mat-card>
