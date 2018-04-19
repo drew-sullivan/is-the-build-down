@@ -1,0 +1,10 @@
+<button routerLink="/admin">Admin</button>
+
+<div class="status-box" [class.up]="adminService.isUp" [class.down]="!adminService.isUp"></div>
+  
+<div *ngIf="!adminService.isUp">
+  <label>Looking into the issue:</label>
+  <ul>
+    <li *ngFor="let name of adminService.fixers">{{ name }}</li>
+  </ul>
+</div>

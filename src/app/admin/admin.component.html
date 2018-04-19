@@ -1,0 +1,20 @@
+<button routerLink="/status">Status</button>
+
+<div class="status-box" [class.up]="adminService.isUp" [class.down]="!adminService.isUp"></div>
+
+<button *ngIf="!adminService.isUp" (click)="adminService.isUp = true">Build is no longer down</button>
+<button *ngIf="adminService.isUp" (click)="adminService.isUp = false">Build is down</button>
+
+<div class="status"></div>
+
+<div *ngIf="!adminService.isUp">
+  <label>Who's looking at the issue?</label>
+  <form>
+    <input type="text" #nameInput>
+    <button (click)="add(nameInput.value); nameInput.value = ''">Submit</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let name of adminService.fixers">{{ name }}</li>
+  </ul>
+</div>
