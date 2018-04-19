@@ -3,6 +3,7 @@
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
+  background-color: #d3d3d3;
 }
 
 mat-card {

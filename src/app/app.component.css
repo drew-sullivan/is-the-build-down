@@ -11,3 +11,11 @@ mat-toolbar {
   background: linear-gradient(103deg, #ff0000 0%, #ff0000 18%, #008000 88%, #008000 100%); /* w3c */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#008000',GradientType=1 ); /* ie6-9 */ 
 }
+
+.title {
+  color: white;
+}
+
+.status {
+  margin-left: 15px;
+}
