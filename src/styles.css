@@ -10,3 +10,7 @@ mat-card {
   max-width: 80%;
   margin: 15px 20%;
 }
+
+.white {
+  color: white;
+}

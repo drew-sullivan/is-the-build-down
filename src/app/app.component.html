@@ -1,8 +1,20 @@
 <mat-toolbar>
   <span class="title">{{ title }}</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button routerLink="/admin">Admin</button>
-  <button mat-raised-button routerLink="/status" class="status">Status</button>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon class="white">more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/admin">
+      <mat-icon>face</mat-icon>
+      <span>Admin</span>
+    </button>
+    <button mat-menu-item routerLink="/status">
+      <mat-icon *ngIf="adminService.isUp">thumb_up</mat-icon>
+      <mat-icon *ngIf="!adminService.isUp">thumb_down</mat-icon>
+      <span>Status</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
