@@ -1,7 +1,6 @@
 <mat-card>
   <div class="status-box" [class.up]="adminService.isUp" [class.down]="!adminService.isUp"></div>
-  <div *ngIf="!adminService.isUp" style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/z9AUvhAEiXOqA" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/form-z9AUvhAEiXOqA"></a></p>  
-  <div class="status"></div>
+  <div *ngIf="!adminService.isUp" style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/z9AUvhAEiXOqA" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/form-z9AUvhAEiXOqA"></a></p>
   
   <div *ngIf="!adminService.isUp">
     <mat-list role="list" *ngIf="!adminService.isUp">

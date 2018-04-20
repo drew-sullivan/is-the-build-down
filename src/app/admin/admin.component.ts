@@ -9,11 +9,14 @@ import { AdminService } from './../admin.service';
 })
 export class AdminComponent implements OnInit {
 
+  checked: boolean;
+
   constructor(
     private adminService: AdminService
   ) { }
 
   ngOnInit() {
+    this.checked = !this.adminService.isUp;
   }
 
   changeBuildStatus(status: boolean): void {
@@ -23,6 +26,11 @@ export class AdminComponent implements OnInit {
   add(name: string): void {
     this.adminService.addFixerToList(name);
     console.log(this.adminService.fixers);
+  }
+
+  toggle(): void {
+    this.adminService.isUp = !this.adminService.isUp;
+    this.checked = this.adminService.isUp;
   }
 
 }

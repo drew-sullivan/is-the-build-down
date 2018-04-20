@@ -1,10 +1,17 @@
 <mat-card>
   <div class="status-box" [class.up]="adminService.isUp" [class.down]="!adminService.isUp"></div>
 
-  <div class="change-status-buttons">
-    <button mat-raised-button *ngIf="!adminService.isUp" (click)="adminService.isUp = true">Build is no longer down</button>
-    <button mat-raised-button *ngIf="adminService.isUp" (click)="adminService.isUp = false">Build is down</button>
-  </div>
+  <h2 *ngIf="adminService.isUp" class="example-h2">Build is Up</h2>
+  <h2 *ngIf="!adminService.isUp" class="example-h2">Build is Down</h2>
+  <section class="example-section">
+    <mat-slide-toggle
+        class="example-margin"
+        (click)="toggle()"
+        [color]="color"
+        [checked]="checked"
+        [disabled]="disabled">
+    </mat-slide-toggle>
+  </section>
   
   <div class="status"></div>
   
