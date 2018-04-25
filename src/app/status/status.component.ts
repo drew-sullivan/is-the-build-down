@@ -19,7 +19,7 @@ export class StatusComponent implements OnInit {
   href: string;
 
   constructor(
-    private adminService: AdminService,
+    public adminService: AdminService,
     public sanitizer: DomSanitizer
   ) { }
 

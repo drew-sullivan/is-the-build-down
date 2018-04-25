@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AppComponent {
   title = 'Build Status';
 
-  constructor(private adminService: AdminService) {
+  constructor(public adminService: AdminService) {
 
   }
 }

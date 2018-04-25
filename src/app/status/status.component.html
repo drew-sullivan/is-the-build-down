@@ -1,13 +1,13 @@
 <mat-card>
   <div class="status-box" [class.up]="adminService.isUp" [class.down]="!adminService.isUp"></div>
   
-  <div *ngIf="!adminService.isUp">
-    <div class="gif-box">
-      <div style="width:100%;height:0;padding-bottom:83%;position:relative;"><iframe src="https://giphy.com/embed/2dEJuWB49LHqM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-    </div>
+  <div *ngIf="!adminService.isUp" class="fixer-box">
     <mat-list role="list" *ngIf="!adminService.isUp">
       <h3 mat-subheader>Looking into the issue:</h3>
       <mat-list-item role="listitem" *ngFor="let name of adminService.fixers">{{ name }}</mat-list-item>
     </mat-list>
+    <div class="gif-box">
+      <div style="width:100%;height:0;padding-bottom:83%;position:relative;"><iframe src="https://giphy.com/embed/2dEJuWB49LHqM" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+    </div>
   </div>
 </mat-card>

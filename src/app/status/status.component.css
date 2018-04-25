@@ -12,5 +12,9 @@
 
 .gif-box {
   width: 31%;
-  margin: 24px auto;
+  margin: 24px auto 0 auto;
+}
+
+.fixer-box {
+  margin-left: -16px;
 }
