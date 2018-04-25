@@ -1,8 +1,8 @@
 <mat-card>
   <div class="status-box" [class.up]="adminService.isUp" [class.down]="!adminService.isUp"></div>
 
-  <h2 *ngIf="adminService.isUp" class="example-h2">Build is Up</h2>
-  <h2 *ngIf="!adminService.isUp" class="example-h2">Build is Down</h2>
+  <h2 *ngIf="adminService.isUp" class="example-h2">Build is currently: Up</h2>
+  <h2 *ngIf="!adminService.isUp" class="example-h2">Build is currently: Down</h2>
   <section class="example-section">
     <mat-slide-toggle
         class="example-margin"
@@ -16,18 +16,20 @@
   <div class="status"></div>
   
   <div *ngIf="!adminService.isUp" class="fixer-box">
-    <label>Who's looking at the issue?</label>
-    <form>
-      <mat-form-field class="example-form-field">
-        <input matInput type="text" placeholder="Name" #nameInput/>
-        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-          <mat-icon>close</mat-icon>
-        </button>
-        </mat-form-field>
-      <button mat-raised-button (click)="add(nameInput.value); nameInput.value = ''">Submit</button>
-    </form>
-  
-    <mat-list role="list" *ngIf="!adminService.isUp">
+    <div>
+      <label>Who's looking at the issue?</label>
+      <form>
+        <mat-form-field class="example-form-field">
+          <input matInput type="text" placeholder="Name" #nameInput/>
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+          </mat-form-field>
+        <button mat-raised-button (click)="add(nameInput.value); nameInput.value = ''">Submit</button>
+      </form>
+    </div>
+    
+    <mat-list role="list" class="util-left-margin">
       <h3 mat-subheader>Looking into the issue:</h3>
       <mat-list-item role="listitem" *ngFor="let name of adminService.fixers">{{ name }}</mat-list-item>
     </mat-list>

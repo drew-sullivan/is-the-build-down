@@ -19,13 +19,8 @@ export class AdminComponent implements OnInit {
     this.checked = !this.adminService.isUp;
   }
 
-  changeBuildStatus(status: boolean): void {
-    console.log(`Build is up: ${status}`);
-  }
-
   add(name: string): void {
     this.adminService.addFixerToList(name);
-    console.log(this.adminService.fixers);
   }
 
   toggle(): void {
