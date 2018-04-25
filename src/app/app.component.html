@@ -9,7 +9,8 @@
       <mat-icon>face</mat-icon>
       <span>Admin</span>
     </button>
-    <button mat-menu-item routerLink="/status">
+    <button mat-menu-item routerLink="/status" [class.up]="adminService.isUp"
+            [class.down]="!adminService.isUp" class="status-option">
       <mat-icon *ngIf="adminService.isUp">thumb_up</mat-icon>
       <mat-icon *ngIf="!adminService.isUp">thumb_down</mat-icon>
       <span>Status</span>

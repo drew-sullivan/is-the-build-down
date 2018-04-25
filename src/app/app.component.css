@@ -19,3 +19,11 @@ mat-toolbar {
 .status {
   margin-left: 15px;
 }
+
+.down:hover {
+  background: #ffe7e7;
+}
+
+.up:hover {
+  background: #d0e2d0;
+}
