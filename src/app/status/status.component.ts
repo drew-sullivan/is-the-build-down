@@ -10,8 +10,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class StatusComponent implements OnInit {
 
-  src: SafeResourceUrl;
-  href: SafeResourceUrl;
+  src: string;
+  href: string;
 
   constructor(
     private adminService: AdminService,
@@ -20,8 +20,8 @@ export class StatusComponent implements OnInit {
 
   ngOnInit() {
     const randGif = getRandomGif();
-    this.src = this.sanitizer.bypassSecurityTrustResourceUrl(randGif.src);
-    this.href = this.sanitizer.bypassSecurityTrustResourceUrl(randGif.href);
+    this.src = randGif.src;
+    this.href = randGif.href;
     console.log(randGif);
   }
 

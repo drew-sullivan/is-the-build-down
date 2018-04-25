@@ -10,12 +10,14 @@ import { AppRoutingModule } from './/app-routing.module';
 
 import { AdminService } from './admin.service';
 import { MaterialModule } from './/material.module';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatusComponent,
-    AdminComponent
+    AdminComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
